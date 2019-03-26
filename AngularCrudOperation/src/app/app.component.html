@@ -1,0 +1,78 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ names }}!
+  </h1>
+  <table>
+    <tr>
+      <td>Name</td>
+      <input [(ngModel)]="student.Name"/>
+      <td>{{Name}}</td>
+    </tr>
+    <tr>
+      <td>SurName</td>
+      <input [(ngModel)]="student.SurName"/>
+      <td>{{SurName}}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <input [(ngModel)]="student.Address"/>
+      <td>{{Address}}</td>
+    </tr>
+    <tr>
+      <td>Marks</td>
+      <input [(ngModel)]="student.Marks"/>
+      <td>{{Marks}}</td>
+    </tr>
+    <input type="Submit" value="ClickMe" (click)="ClickMe()">
+    <h1>--------------------</h1>
+    <p>
+      <tr>
+          <td>Name</td>
+          <td>SurName</td>
+          <td>Address</td>
+          <td>Marks</td>
+          <td>index</td>
+          <td>First</td>
+          <td>Last</td>
+      </tr>
+  <tr *ngFor="let item of studentList;let i=index;let first=first;let last=last">
+  <td>{{item.Name}}</td>
+  <td>{{item.SurName}}</td>
+  <td>{{item.Address}}</td>
+  <td>{{item.Marks}}</td>
+  <td>{{i}}</td>
+  <td>{{first}}</td>
+  <td>{{last}}</td>
+  <input type="button" value="Edit" (click)="Edit(i)">
+  <input type="button" value="Delete" (click)="Delete(item)">
+  </tr>
+  </p>
+  </table>
+  <h1>------------------------------------------------</h1>
+<div *ngIf="checkEdit">
+  <table>
+      <tr>
+        <td>Name</td>
+        <input [(ngModel)]="EditStudent.Name"/>
+        <td>{{Name}}</td>
+      </tr>
+      <tr>
+        <td>SurName</td>
+        <input [(ngModel)]="EditStudent.SurName"/>
+        <td>{{SurName}}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <input [(ngModel)]="EditStudent.Address"/>
+        <td>{{Address}}</td>
+      </tr>
+      <tr>
+        <td>Marks</td>
+        <input [(ngModel)]="EditStudent.Marks"/>
+        <td>{{Marks}}</td>
+      </tr>
+      <input type="button" value="Edit Record" (click)="ClickMe()">
+      </table>
+      </div>
+
